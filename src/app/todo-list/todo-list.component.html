@@ -1,0 +1,23 @@
+<h1>TODO'S</h1>
+
+<mat-list class="todos-list">
+  <h2>Undone</h2>
+  <a
+    class="create-todo"
+    mat-raised-button
+    [routerLink]="['/todos', 'create']"
+    routerLinkActive="router-link-active"
+    >+</a
+  >
+
+  <mat-list-item class="one-todo" *ngFor="let todo of undone | async">
+    <app-one-todo [todo]="todo"></app-one-todo>
+  </mat-list-item>
+</mat-list>
+
+<mat-list class="todos-list">
+  <h2>Done</h2>
+  <mat-list-item class="one-todo" *ngFor="let todo of done | async">
+    <app-one-todo [todo]="todo"></app-one-todo>
+  </mat-list-item>
+</mat-list>
