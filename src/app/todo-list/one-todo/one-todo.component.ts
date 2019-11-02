@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { UPDATE_TODO } from '../../../actions/todo.actions';
 import { Todo } from '../../../models/todo.model';
 
 @Component({
@@ -9,11 +11,13 @@ import { Todo } from '../../../models/todo.model';
 export class OneTodoComponent implements OnInit {
   @Input() todo: Todo;
 
-  constructor() {}
+  constructor(private store: Store<Todo[]>) {}
 
   ngOnInit() {}
 
   toggle() {
-    this.todo.done = !this.todo.done;
+    const newTodo = { ...this.todo };
+    newTodo.done = !newTodo.done;
+    this.store.dispatch(UPDATE_TODO(newTodo));
   }
 }

@@ -5,4 +5,4 @@
 >
   <h2 class="title">{{ todo.title }}</h2>
 </a>
-<mat-checkbox (click)="toggle()"></mat-checkbox>
+<mat-checkbox [(ngModel)]="todo.done" (click)="toggle()"></mat-checkbox>
