@@ -6,15 +6,16 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: $color-neutral-dark;
 
   .create {
-    height: 300px;
     width: 400px;
+    height: min-content;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
     border-radius: 5px;
+    background-color: $color-neutral;
     box-shadow: $shadow;
   }
 }

@@ -1,8 +1,9 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { Todo } from '../models/todo.model';
 
 export class InMemTodoService implements InMemoryDbService {
   createDb() {
-    let todos = [
+    let todos: Todo[] = [
       { id: 1, title: 'Windstorm', done: true },
       { id: 2, title: 'Bombasto', done: true },
       { id: 3, title: 'Magneta', done: false },

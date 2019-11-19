@@ -3,8 +3,14 @@
     <input matInput placeholder="Title" [(ngModel)]="title" />
   </mat-form-field>
 
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Description" />
+  <mat-form-field class="description">
+    <textarea
+      matInput
+      placeholder="Description"
+      cols="30"
+      rows="10"
+      [(ngModel)]="description"
+    ></textarea>
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="validate()">
     Create
