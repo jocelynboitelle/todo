@@ -2,77 +2,118 @@
 
 h1,
 h2 {
-  color: $color-primary-regular;
+  color: #757575;
+  font-weight: normal;
+  text-transform: capitalize;
+  font-family: serif;
 }
 
 :host {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: $color-neutral-dark;
+  background: linear-gradient(#42a0c8, #93fff5);
 
-  .todos-content {
-    width: 100%;
+  .todo-app {
+    width: 700px;
+    height: 600px;
+    position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: $shadow;
 
-    .todos-list {
-      width: 50%;
+    .todos-content {
+      width: 100%;
+      height: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
 
-      .list {
-        width: $todo-width-hover;
-        height: 750px;
+      .todos-list {
+        width: 50%;
+        height: 85%;
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
-        padding: 0 20px;
-        overflow: auto;
 
-        .create-todo {
-          width: $todo-width;
+        .list {
+          width: $todo-width-hover;
           display: flex;
-          justify-content: center;
+          flex-direction: column;
           align-items: center;
-          margin: 10px;
-          padding: 30px 0;
-          font-size: 35px;
-          font-weight: bold;
+          padding: 0 10px;
+          overflow: auto;
+
+          .todo {
+            width: $todo-width;
+            height: $todo-height;
+            margin: 10px;
+            border-radius: 25px;
+            background-color: $color-neutral;
+            box-shadow: $shadow;
+            cursor: pointer;
+          }
+
+          .todo:hover {
+            width: $todo-width-hover;
+            box-shadow: $shadow-hover;
+            transition: 0.3s;
+          }
+        }
+        ::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+          box-shadow: inset 0 0 5px grey;
           border-radius: 5px;
-          background-color: $color-primary-regular;
-          color: $color-neutral;
-          box-shadow: $shadow;
-          cursor: pointer;
+          display: none;
         }
 
-        .create-todo:hover {
-          width: $todo-width-hover;
-          background-color: $color-neutral;
-          color: $color-primary-regular;
-          box-shadow: $shadow-hover;
-          transition: 0.3s;
-        }
-
-        .todo {
-          width: $todo-width;
-          height: $todo-height;
-          margin: 10px;
+        ::-webkit-scrollbar-thumb {
+          background: #e0e0e0;
           border-radius: 5px;
-          background-color: $color-neutral;
-          box-shadow: $shadow;
-          cursor: pointer;
         }
 
-        .todo:hover {
-          width: $todo-width-hover;
-          box-shadow: $shadow-hover;
-          transition: 0.3s;
+        ::-webkit-scrollbar-thumb:hover {
+          background: #bdbdbd;
         }
+      }
+    }
+    .create-todo {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      bottom: -30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 35px;
+      border-radius: 30px;
+      background: linear-gradient(#42a0c8, #93fff5);
+      color: $color-neutral;
+      box-shadow: $shadow-hover;
+      cursor: pointer;
+    }
+
+    .create-todo:hover {
+      width: 35px;
+      height: 35px;
+      bottom: -32px;
+      border-radius: 35px;
+      background: white;
+      transition: 0.3s;
+      p {
+        background: linear-gradient(#42a0c8, #93fff5);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
   }

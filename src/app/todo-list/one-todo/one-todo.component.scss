@@ -1,4 +1,4 @@
-@import '../../../styles/sizes.scss';
+@import "../../../styles/sizes.scss";
 
 :host {
   width: 100%;
@@ -12,14 +12,29 @@
     width: 101%;
     height: 1px;
     position: absolute;
-    background-color: red;
+    background-color: #bdbdbd;
   }
+
   .todo-link {
     text-decoration: none;
 
     .title {
-      font-size: 20px;
-      color: $color-primary-regular;
+      font-weight: normal;
+      font-size: 16px;
+      color: #616161;
+      font-style: italic;
+      text-transform: capitalize;
+      font-family: serif;
     }
+
+    .title-done {
+      font-weight: normal;
+      font-size: 16px;
+      color: #bdbdbd;
+    }
+  }
+
+  ::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+    background: linear-gradient(#93fff5, #42a0c8);
   }
 }

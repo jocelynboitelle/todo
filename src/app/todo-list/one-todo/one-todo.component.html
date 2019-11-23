@@ -1,11 +1,11 @@
 <span class="crossed-out" *ngIf="todo.done"></span>
 <a class="todo-link" routerLinkActive="router-link-active">
-  <h2 class="title">
+  <h2 class="title" [ngClass]="{ 'title-done': todo.done }">
     {{ todo.title }}
   </h2>
 </a>
 <mat-checkbox
-  color="primary"
+  class="checkbox"
   [(ngModel)]="todo.done"
   (click)="toggle()"
 ></mat-checkbox>
