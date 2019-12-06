@@ -1,4 +1,12 @@
-@import '../../styles/sizes.scss';
+@import "../../styles/sizes.scss";
+
+h1,
+button {
+  color: white;
+  font-weight: normal;
+  text-transform: capitalize;
+  font-family: serif;
+}
 
 :host {
   height: 100%;
@@ -6,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $color-neutral-dark;
+  background: linear-gradient(#42a0c8, #93fff5);
 
   .create {
     width: 400px;
@@ -17,5 +25,10 @@
     border-radius: 5px;
     background-color: $color-neutral;
     box-shadow: $shadow;
+
+    .mat-raised-button.mat-primary {
+      background: linear-gradient(#93fff5, #42a0c8);
+      font-size: 22px;
+    }
   }
 }
