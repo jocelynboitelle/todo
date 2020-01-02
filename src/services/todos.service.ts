@@ -14,12 +14,10 @@ export class TodosService {
   }
 
   addTodo(todo: Todo): Observable<Todo> {
-    console.log('add', todo.id);
     return this.http.post<Todo>('api/todos', todo);
   }
 
   updateTodo(todo: Todo): Observable<Todo> {
-    console.log('update', todo.id);
     return this.http.put<Todo>('api/todos/' + todo.id, todo);
   }
 }

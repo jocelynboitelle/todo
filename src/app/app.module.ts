@@ -13,7 +13,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppEffects } from '../effects/app.effects';
-import { todosReducer } from '../reducers/todo.reducer';
+import { todosReducerFunction } from '../reducers/todo.reducer';
 import { InMemTodoService } from '../services/inMemHero.service';
 import { TodosService } from '../services/todos.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,7 +34,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   imports: [
     BrowserModule,
     StoreModule.forRoot({
-      todos: todosReducer
+      todos: todosReducerFunction
     }),
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemTodoService),

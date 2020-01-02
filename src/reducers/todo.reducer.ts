@@ -4,17 +4,16 @@ import { Todo } from '../models/todo.model';
 
 const initialtodos: Todo[] = [];
 
-const _todosReducer = createReducer(
+const todosReducer = createReducer(
   initialtodos,
   on(TodoActions.todosReceived, (state, payload) => {
     return [...payload.todos];
   }),
-  //on(TodoActions.todoAdd, (state, payload) => [...state, payload.todo]),
   on(TodoActions.todoUpdate, (todos, payload) =>
     todos.map(todo => (todo.id === payload.todo.id ? payload.todo : todo))
   )
 );
 
-export function todosReducer(state, action) {
-  return _todosReducer(state, action);
+export function todosReducerFunction(state, action) {
+  return todosReducer(state, action);
 }
